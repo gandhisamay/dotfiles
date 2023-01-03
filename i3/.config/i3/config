@@ -171,7 +171,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # Running applications on no-startup 
-exec_always feh --bg-scale ~/Downloads/eiffel.jpg &
+exec_always feh --bg-scale ~/.config/images/eiffel.jpg &
 exec --no-startup-id python3 ~/Documents/bits_wifi_logger.py &
 exec bash ~/.config/polybar/launch.sh --cuts &
 exec bash ~/.config/picom/launch.sh &

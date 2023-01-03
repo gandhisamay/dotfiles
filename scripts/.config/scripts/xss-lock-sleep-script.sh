@@ -7,7 +7,7 @@
 ## CONFIGURATION ##############################################################
 
 # Command to start the locker (should not fork)
-locker="i3lock --image $HOME/.config/i3/lockscreen_background.png"
+locker="i3lock --image $HOME/.config/images/lockscreen_background.png"
 
 # Delay in seconds. Note that by default systemd-logind allows a maximum sleep
 # delay of 5 seconds.
