@@ -23,24 +23,28 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
-
-# Change the node version to 16.15.0
-source $HOME/.config/scripts/set_node_version.sh
-# source zsh-history-substring-search.zsh
-
-export LS_OPTIONS='--color=auto'
-eval "$(dircolors -b)"
-alias ls='ls $LS_OPTIONS'
-
 export HISTSIZE=1000
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=$HISTSIZE
+export LS_OPTIONS='--color=auto'
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# Change the node version to 16.15.0
+source $HOME/.config/scripts/set_node_version.sh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+eval "$(dircolors -b)"
+alias ls='ls $LS_OPTIONS'
+
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
- plugins=(zsh-history-substring-search)
+plugins=(zsh-autosuggestions zsh-history-substring-search)
 
-export WASMTIME_HOME="$HOME/.wasmtime"
-
-export PATH="$WASMTIME_HOME/bin:$PATH"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^[ '  autosuggest-accept
+# source zsh-history-substring-search.zsh

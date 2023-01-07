@@ -6,7 +6,7 @@ crontab -l > $HOME/dotfiles/crontabs
 
 error_exit()
 {
-    notify-send -u critical "Backup Logs
+    notify-send -u critical " Backup Logs
 Error while performing regular backup."
     exit 1
 }
@@ -21,7 +21,7 @@ main(){
     git commit -m "Regular backup" -m "$GIT_STATUS"
     git push || error_exit
 
-    notify-send -u critical "Backup Logs
+    notify-send -u normal " Backup Logs
 Regular backup successfully completed."
   fi
 }
