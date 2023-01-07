@@ -40,3 +40,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
  plugins=(zsh-history-substring-search)
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"

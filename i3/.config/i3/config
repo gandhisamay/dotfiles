@@ -197,6 +197,7 @@ bindsym --release $mod+Shift+s exec "bash ~/.config/scripts/screenshot.sh $HOME/
 bindsym --release $mod+Shift+i exec "bash ~/.config/scripts/screenshot.sh -s $HOME/Pictures/Screenshots/"
 bindsym $mod+Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
 bindsym $mod+v exec alacritty -e nvim ~/.config/i3/config 
+bindsym $mod+u exec bash ~/.config/scripts/toggle_monitor.sh
 
 # This part of the keybind is for shutdowm, logout, suspend and hibernate actions on the device
 
