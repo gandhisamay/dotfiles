@@ -34,6 +34,7 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 source $HOME/.config/scripts/set_node_version.sh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
@@ -42,9 +43,8 @@ alias ls='ls $LS_OPTIONS'
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
-plugins=(zsh-autosuggestions zsh-history-substring-search)
+plugins=(zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlighting)
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[ '  autosuggest-accept
-# source zsh-history-substring-search.zsh
