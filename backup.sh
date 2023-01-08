@@ -20,8 +20,6 @@ else
   COMMIT_MESSAGE="Regular backup"
 fi 
 
-echo $COMMIT_MESSAGE
-
 if  grep -q "$CHANGES_NOT_STAGED" <<< "$GIT_STATUS"  ||  grep -q "$CHANGES_TO_COMMIT" <<< "$GIT_STATUS" ;then
   git add . 
   git commit -m "$COMMIT_MESSAGE" -m "$GIT_STATUS"
