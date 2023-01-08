@@ -35,8 +35,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec alacritty
+# Focus the parent
+bindsym $mod+Return focus parent
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -86,8 +86,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -198,6 +196,7 @@ bindsym --release $mod+Shift+i exec "bash ~/.config/scripts/screenshot.sh -s $HO
 bindsym $mod+Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
 bindsym $mod+v exec alacritty -e nvim ~/.config/i3/config 
 bindsym $mod+u exec bash ~/.config/scripts/toggle_monitor.sh
+bindsym $mod+a exec alacritty
 
 # This part of the keybind is for shutdowm, logout, suspend and hibernate actions on the device
 
