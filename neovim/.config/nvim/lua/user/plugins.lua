@@ -18,10 +18,10 @@ end
 
 local group = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
-	command = "source <afile> | PackerSync",
-	pattern = "plugins.lua", -- the name of your plugins file
-	group = group,
-})-- Use a protected call so we don't error out on first use
+  command = "source <afile> | PackerSync",
+  pattern = "plugins.lua", -- the name of your plugins file
+  group = group,
+}) -- Use a protected call so we don't error out on first use
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -77,7 +77,9 @@ return packer.startup(function(use)
   }
 
   use {
-    "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+    "akinsho/toggleterm.nvim",
+    tag = 'v2.*',
+    config = function()
       require("toggleterm").setup()
     end
   }
@@ -102,13 +104,19 @@ return packer.startup(function(use)
 
   use {
     "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
   }
+
   use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/impatient.nvim'
   use "ahmedkhalf/project.nvim"
+
   -- Dart config
-  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'akinsho/flutter-tools.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
   use "jose-elias-alvarez/null-ls.nvim"
   use 'notjedi/nvim-rooter.lua'
   use {
@@ -144,21 +152,21 @@ return packer.startup(function(use)
     })
 
   use 'folke/tokyonight.nvim'
-  use'vimpostor/vim-tpipeline'
+  use 'vimpostor/vim-tpipeline'
   use("nathom/filetype.nvim")
 
   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = function()
-          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-          ts_update()
-      end,
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
   }
-  
+
   use 'mboughaba/i3config.vim'
 
   -- Lua
-    -- Automatically set up your configuration after cloning packer.nvim
+  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
