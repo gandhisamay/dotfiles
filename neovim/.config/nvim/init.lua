@@ -13,8 +13,10 @@ require('user.lualine')
 require('user.impatient')
 require("user.project")
 require("user.rooter")
-require("user.compitest")
 require("user.nvim-notify")
 require("user.toggle_term")
 require("user.lazygit_toggle_term")
 require("user.gitsigns")
+
+-- Include autocommands here.
+require("user.autocommands.i3config")

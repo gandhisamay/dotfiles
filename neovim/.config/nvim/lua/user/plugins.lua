@@ -114,6 +114,9 @@ return packer.startup(function(use)
   use {
     'xeluxee/competitest.nvim',
     requires = 'MunifTanjim/nui.nvim',
+    config = function()
+      require 'competitest'.setup({})
+    end,
   }
   use {
     'rcarriga/nvim-notify',
@@ -151,19 +154,8 @@ return packer.startup(function(use)
           ts_update()
       end,
   }
-
-  -- Lua
-  use {
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  
+  use 'mboughaba/i3config.vim'
 
   -- Lua
     -- Automatically set up your configuration after cloning packer.nvim
