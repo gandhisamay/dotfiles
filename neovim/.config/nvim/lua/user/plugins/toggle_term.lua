@@ -42,4 +42,4 @@ function FloatTermToggle()
   floatTerm:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua FloatTermToggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>lua FloatTermToggle()<CR>", { noremap = true, silent = true })

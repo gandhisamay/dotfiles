@@ -1,13 +1,12 @@
 #!/bin/bash
 
-
 error_exit(){
     notify-send -u critical " Backup Logs" "Error while performing regular backup."
     exit 1
 }
 
 export DISPLAY=:0
-crontab -l > $HOME/dotfiles/crontabs
+cd $HOME/dotfiles/ && crontab -l > crontabs
 
 
 CHANGES_NOT_STAGED="Changes not staged for commit"
@@ -27,4 +26,3 @@ if  grep -q "$CHANGES_NOT_STAGED" <<< "$GIT_STATUS"  ||  grep -q "$CHANGES_TO_CO
 
   notify-send -u normal " Backup Logs" "Regular backup successfully completed."
 fi
-

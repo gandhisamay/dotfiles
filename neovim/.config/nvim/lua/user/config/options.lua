@@ -32,7 +32,7 @@ vim.opt.wrap = true -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append "w"
 vim.opt.fillchars = {
   fold = " ", -- remove folding chars
   vert = "|", -- set vsplit chars
