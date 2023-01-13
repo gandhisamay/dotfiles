@@ -178,19 +178,19 @@ bindsym $mod+question exec i3help
 bindsym $mod+n exec alacritty -e ranger
 bindsym $mod+v exec alacritty -e nvim ~/.config/i3/config 
 bindsym $mod+a exec alacritty
+bindsym $mod+Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
 
 # Key binds which involve running custom written scripts.
 mode "$custom_scripts" {
   
-  bindsym c exec bash ~/.config/scripts/rofi-wifi-menu.sh
-  bindsym BackSpace exec ~/.config/polybar/cuts/scripts/powermenu.sh
-  bindsym t exec bash ~/.config/scripts/toggle_bluetooth_sink.sh
-  bindsym d exec bash ~/.config/scripts/rofi-bluetooth
-  bindsym s --release exec bash ~/.config/scripts/screenshot.sh $HOME/Pictures/Screenshots/
-  bindsym i --release exec bash ~/.config/scripts/screenshot.sh -s $HOME/Pictures/Screenshots/
-  bindsym Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
-  bindsym u exec bash ~/.config/scripts/toggle_monitor.sh
-  bindsym z exec bash $HOME/.config/polybar/launch.sh --cuts
+  bindsym c exec bash ~/.config/scripts/rofi-wifi-menu.sh, mode "default"
+  bindsym BackSpace exec ~/.config/polybar/cuts/scripts/powermenu.sh, mode "default"
+  bindsym t exec bash ~/.config/scripts/toggle_bluetooth_sink.sh, mode "default"
+  bindsym d exec bash ~/.config/scripts/rofi-bluetooth, mode "default"
+  bindsym s --release exec bash ~/.config/scripts/screenshot.sh $HOME/Pictures/Screenshots/, mode "default"
+  bindsym i --release exec bash ~/.config/scripts/screenshot.sh -s $HOME/Pictures/Screenshots/, mode "default"
+  bindsym u exec bash ~/.config/scripts/toggle_monitor.sh, mode "default"
+  bindsym z exec bash $HOME/.config/polybar/launch.sh --cuts, mode "default"
   
   bindsym Escape mode "default"
   bindsym Return mode "default"

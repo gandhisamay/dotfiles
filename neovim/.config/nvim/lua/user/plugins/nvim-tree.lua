@@ -32,7 +32,7 @@ require("nvim-tree").setup({
           unmerged = "",
           renamed = "➜",
           deleted = "",
-          untracked = "+",
+          untracked = "",
           ignored = "◌",
         },
       },
@@ -45,5 +45,3 @@ require("nvim-tree").setup({
     timeout = 400,
   },
 })
-
-

@@ -1,1 +1,3 @@
 zsh/.zsh_history
+# this folder I have added in .gitignore so that telescope doesn't show it in the find_files functio
+.git
