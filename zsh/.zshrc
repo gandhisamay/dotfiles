@@ -19,7 +19,7 @@
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -49,4 +49,3 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[ '  autosuggest-accept
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

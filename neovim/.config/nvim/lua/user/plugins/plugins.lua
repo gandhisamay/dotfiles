@@ -119,6 +119,7 @@ return packer.startup(function(use)
   }
   use "jose-elias-alvarez/null-ls.nvim"
   use 'notjedi/nvim-rooter.lua'
+
   use {
     'xeluxee/competitest.nvim',
     requires = 'MunifTanjim/nui.nvim',

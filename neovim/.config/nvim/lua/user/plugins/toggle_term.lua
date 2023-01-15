@@ -5,7 +5,7 @@ local horizontalTerm = Terminal:new({
   cmd = "zsh",
   dir = "%:p:h",
   -- direction = "horizontal",
-  direction="horizontal",
+  direction = "horizontal",
   -- function to run on opening the terminal
   on_open = function(_)
     vim.cmd("startinsert!")
@@ -27,7 +27,7 @@ local floatTerm = Terminal:new({
   cmd = "zsh",
   dir = "%:p:h",
   -- direction = "horizontal",
-  direction="float",
+  direction = "float",
   -- function to run on opening the terminal
   on_open = function(_)
     vim.cmd("startinsert!")
