@@ -102,7 +102,7 @@ keymap("n", "<leader>gt", "<Cmd>lua require('user.functions.generate_test_cases'
 keymap("n", "<leader>tp", "<Cmd>Telescope projects<CR>", opts)
 -- keymap("n", "<leader>l", "<Cmd>latex <CR>")
 
---Format json files 
+--Format json files
 keymap("n", "<A-j>", ":%!jq<CR>", opts)
 
 keymap("n", "<leader>l", "<Cmd>!latex_viewer.sh %<CR>", opts)

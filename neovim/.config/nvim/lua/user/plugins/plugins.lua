@@ -127,7 +127,7 @@ return packer.startup(function(use)
     end,
   }
   -- use {
-    -- 'rcarriga/nvim-notify',
+  -- 'rcarriga/nvim-notify',
   -- }
   --TODO: update other plugins
   -- use({
@@ -164,23 +164,11 @@ return packer.startup(function(use)
   }
 
   use 'mboughaba/i3config.vim'
+  use { 'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
   -- Packer
-  use({
-    "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-        -- add any options here
-      })
-    end,
-    requires = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-    }
-  })
-
   -- Lua
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

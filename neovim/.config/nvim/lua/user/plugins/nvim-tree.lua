@@ -1,6 +1,5 @@
-local opts = { noremap = true, silent = true }
-
 local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
 keymap("n", "<C-f>", "<Cmd>NvimTreeFocus<CR>", opts)
 keymap("n", "<leader>cf", "<Cmd>NvimTreeFindFile<CR>", opts)
@@ -44,4 +43,7 @@ require("nvim-tree").setup({
     show_on_dirs = true,
     timeout = 400,
   },
+  view = {
+    side  = "right"
+  }
 })

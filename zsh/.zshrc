@@ -48,3 +48,5 @@ plugins=(zsh-autosuggestions zsh-history-substring-search zsh-syntax-highlightin
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[ '  autosuggest-accept
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
