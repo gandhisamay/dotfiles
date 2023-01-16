@@ -29,12 +29,13 @@ export SAVEHIST=$HISTSIZE
 export LS_OPTIONS='--color=auto'
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
-
+export FZF_DEFAULT_OPS="--extended"
 # Change the node version to 16.15.0
 source $HOME/.config/scripts/set_node_version.sh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+# zsh-autocomplete 
 
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
@@ -49,3 +50,5 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^[ '  autosuggest-accept
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
