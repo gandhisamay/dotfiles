@@ -169,7 +169,19 @@ return packer.startup(function(use)
     -- optional for icon support
     requires = { 'nvim-tree/nvim-web-devicons' }
   }
-  -- Packer
+  -- Lua
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {}
+    end
+  }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  }) -- Packer
   -- Lua
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
