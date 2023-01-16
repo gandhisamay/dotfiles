@@ -30,6 +30,7 @@ export LS_OPTIONS='--color=auto'
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export FZF_DEFAULT_OPS="--extended"
+export PATH="${PATH}:${HOME}/.local/bin/"
 # Change the node version to 16.15.0
 source $HOME/.config/scripts/set_node_version.sh
 source $HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh

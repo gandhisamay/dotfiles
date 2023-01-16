@@ -244,29 +244,33 @@ gchar *clean(gchar *text) {
 gchar *formatKeys(gchar *text) {
   if (text == NULL)
     return "";
-  return g_strdup_printf("<span foreground='#FDD835'>%s</span>",
-                         g_strjoinv("</span> + <span foreground='#FDD835'>",
-                                    g_strsplit(text, "<span foreground='#FDD835'>+</span>", -1)));
+  return g_strdup_printf(
+      "<span foreground='#FDD835'>%s</span>",
+      g_strjoinv("</span> + <span foreground='#FDD835'>",
+                 g_strsplit(text, "<span foreground='#FDD835'>+</span>", -1)));
 }
 
-gchar *formatCmds(gchar *text){
-  if(text == NULL)
+gchar *formatCmds(gchar *text) {
+  if (text == NULL)
     return "";
 
   return g_strdup_printf("<span foreground='#9E9E9E'>: %s</span>", text);
 }
 
 gchar *formatMode(int mode) {
-  return mode == 3 ? "<span foreground='#FDD835'>Mode</span> " : mode == 1 ? "<span foreground='#FFF'></span>": "   ";
+  return mode == 3   ? "<span foreground='#FDD835'>Mode</span> "
+         : mode == 1 ? "<span foreground='#FFF'></span>"
+                     : "   ";
 }
 
 GSList *merge(GSList *lines) {
   GSList *results = NULL;
   while (lines != NULL) {
     struct binding *t = lines->data;
-    results = g_slist_prepend(
-        results, g_strdup_printf("%s%s %s", formatMode(t->type),
-                                 formatKeys(clean(t->keys)), formatCmds(clean(t->cmd))));
+    results =
+        g_slist_prepend(results, g_strdup_printf("%s%s %s", formatMode(t->type),
+                                                 formatKeys(clean(t->keys)),
+                                                 formatCmds(clean(t->cmd))));
     lines = g_slist_next(lines);
   }
   return results;
