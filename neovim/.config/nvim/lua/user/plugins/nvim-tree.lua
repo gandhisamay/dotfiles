@@ -12,7 +12,7 @@ require("nvim-tree").setup({
     update_cwd = true
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     show_on_dirs = false,
     debounce_delay = 50,
     icons = {
@@ -44,6 +44,6 @@ require("nvim-tree").setup({
     timeout = 400,
   },
   view = {
-    side  = "right"
+    side = "right"
   }
 })

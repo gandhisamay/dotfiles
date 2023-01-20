@@ -182,6 +182,16 @@ return packer.startup(function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   }) -- Packer
+
+  -- Packer
+  use({
+    "folke/noice.nvim",
+    config = function()
+      require("noice").setup({
+        -- add any options here
+      })
+    end,
+  })
   -- Lua
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
