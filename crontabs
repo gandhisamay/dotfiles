@@ -22,4 +22,5 @@
 # 
 # m h  dom mon dow   command
 */5 * * * * $HOME/.config/scripts/low_battery_notifier
+*/20 * * * * $HOME/.config/scripts/eye_break_notifier
 # * */2 * * * $HOME/dotfiles/backup
