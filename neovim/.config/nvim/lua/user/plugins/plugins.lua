@@ -70,11 +70,10 @@ return packer.startup(function(use)
   use "LunarVim/Colorschemes"
   use "lewis6991/gitsigns.nvim"
 
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+  -- use {
+  --   'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  --   requires = { { 'nvim-lua/plenary.nvim' } }
+  -- }
 
   use {
     "akinsho/toggleterm.nvim",
@@ -184,14 +183,14 @@ return packer.startup(function(use)
   }) -- Packer
 
   -- Packer
-  use({
-    "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-        -- add any options here
-      })
-    end,
-  })
+  -- use({
+  --   "folke/noice.nvim",
+  --   config = function()
+  --     require("noice").setup({
+  --       -- add any options here
+  --     })
+  --   end,
+  -- })
   -- Lua
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

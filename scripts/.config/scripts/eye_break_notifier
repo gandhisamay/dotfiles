@@ -1,3 +1,4 @@
 #!/bin/bash
+export DISPLAY=:0
 
 notify-send -u low " Eye break" "Please look 20 feet away for 20 seconds" 

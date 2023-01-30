@@ -53,3 +53,4 @@ bindkey '^[ '  autosuggest-accept
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias lg='lazygit'
