@@ -106,3 +106,4 @@ keymap("n", "<leader>tp", "<Cmd>Telescope projects<CR>", opts)
 keymap("n", "<A-j>", ":%!jq<CR>", opts)
 
 keymap("n", "<leader>l", "<Cmd>!latex_viewer.sh %<CR>", opts)
+keymap("n", "<leader>w", "<Cmd>!mysql -u root < %<CR>", opts)
