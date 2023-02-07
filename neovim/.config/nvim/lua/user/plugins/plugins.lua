@@ -84,12 +84,20 @@ return packer.startup(function(use)
   }
 
   -- Vim starter like startify
+  -- use {
+  --   'goolord/alpha-nvim',
+  --   requires = { 'kyazdani42/nvim-web-devicons' },
+  --   config = function()
+  --     require 'alpha'.setup(require 'alpha.themes.startify'.config)
+  --   end,
+  -- }
+
   use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
     config = function()
-      require 'alpha'.setup(require 'alpha.themes.startify'.config)
-    end,
+          end,
+    requires = { 'nvim-tree/nvim-web-devicons' }
   }
 
   use 'kyazdani42/nvim-tree.lua'
