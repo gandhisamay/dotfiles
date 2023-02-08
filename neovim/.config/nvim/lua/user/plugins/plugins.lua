@@ -60,7 +60,6 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -84,20 +83,12 @@ return packer.startup(function(use)
   }
 
   -- Vim starter like startify
-  -- use {
-  --   'goolord/alpha-nvim',
-  --   requires = { 'kyazdani42/nvim-web-devicons' },
-  --   config = function()
-  --     require 'alpha'.setup(require 'alpha.themes.startify'.config)
-  --   end,
-  -- }
-
   use {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-          end,
-    requires = { 'nvim-tree/nvim-web-devicons' }
+      require 'alpha'.setup(require 'alpha.themes.startify'.config)
+    end,
   }
 
   use 'kyazdani42/nvim-tree.lua'
@@ -118,14 +109,14 @@ return packer.startup(function(use)
 
   use 'nvim-lualine/lualine.nvim'
   use 'lewis6991/impatient.nvim'
-  use "ahmedkhalf/project.nvim"
+  -- use "ahmedkhalf/project.nvim"
 
   -- Dart config
   use { 'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim'
   }
   use "jose-elias-alvarez/null-ls.nvim"
-  use 'notjedi/nvim-rooter.lua'
+  -- use 'notjedi/nvim-rooter.lua'
 
   use {
     'xeluxee/competitest.nvim',
@@ -134,16 +125,7 @@ return packer.startup(function(use)
       require 'competitest'.setup({})
     end,
   }
-  -- use {
-  -- 'rcarriga/nvim-notify',
-  -- }
-  --TODO: update other plugins
-  -- use({
-  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   config = function()
-  --     require("lsp_lines").setup()
-  --   end,
-  -- })
+
   use 'Pocco81/auto-save.nvim'
   use({
     "kylechui/nvim-surround",
@@ -185,21 +167,8 @@ return packer.startup(function(use)
     end
   }
 
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  }) -- Packer
-
-  -- Packer
-  -- use({
-  --   "folke/noice.nvim",
-  --   config = function()
-  --     require("noice").setup({
-  --       -- add any options here
-  --     })
-  --   end,
-  -- })
-  -- Lua
+  use "vimwiki/vimwiki"
+  use "ahmedkhalf/project.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

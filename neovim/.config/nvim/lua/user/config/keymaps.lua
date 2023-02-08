@@ -99,7 +99,7 @@ keymap("n", "<leader>gt", "<Cmd>lua require('user.functions.generate_test_cases'
 -- keymap("n", "<leader>ra", "!npx react-native run-android", opts)
 
 --Open telescope projects
-keymap("n", "<leader>tp", "<Cmd>Telescope projects<CR>", opts)
+keymap("n", "<leader>tp", "<Cmd>FzfLua require('project').get_recent_project()<CR>", opts)
 -- keymap("n", "<leader>l", "<Cmd>latex <CR>")
 
 --Format json files

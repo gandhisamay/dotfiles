@@ -164,6 +164,7 @@ exec  bash ~/.config/polybar/launch.sh --cuts &
 exec --no-startup-id bash ~/.config/picom/launch.sh &
 exec_always --no-startup-id xset dpms 0 0 600 &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/scripts/xss-lock-sleep-script.sh &
+exec --no-startup-id sh -c "/bin/brave-browser -- https://hackmd.io/yKepMyvHTC6mYU-O2TeNvg"
 
 
 # Custom key binds
@@ -191,6 +192,7 @@ mode "$custom_scripts" {
   bindsym i --release exec bash ~/.config/scripts/screenshot.sh -s $HOME/Pictures/Screenshots/, mode "default"
   bindsym u exec bash ~/.config/scripts/toggle_monitor.sh, mode "default"
   bindsym z exec bash $HOME/.config/polybar/launch.sh --cuts, mode "default"
+  bindsym n exec sh -c "/bin/brave-browser -- https://hackmd.io/yKepMyvHTC6mYU-O2TeNvg", mode "default"
   
   bindsym Escape mode "default"
   bindsym Return mode "default"
