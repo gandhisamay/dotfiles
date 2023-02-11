@@ -169,6 +169,8 @@ return packer.startup(function(use)
 
   use "vimwiki/vimwiki"
   use "ahmedkhalf/project.nvim"
+  use "rcarriga/nvim-notify"
+  use 'searleser97/cpbooster.vim'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

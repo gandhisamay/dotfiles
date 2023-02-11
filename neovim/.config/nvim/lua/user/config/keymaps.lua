@@ -84,11 +84,11 @@ keymap("n", "<leader>b", "<Cmd>CompetiTestRun<CR>", opts)
 keymap("n", "<leader>bn", "<Cmd>CompetiTestRunNC<CR>", opts)
 keymap("n", "<leader>e", "<Cmd>CompetiTestEdit<CR>", opts)
 keymap("n", "<leader>d", "<Cmd>CompetiTestDelete<CR>", opts)
-keymap("n", "<leader>r", "<Cmd>CompetiTestReceive<CR>", opts)
+keymap("n", "<leader>r", "<Cmd>CompetiTestReceive testcases<CR>", opts)
 
 --cpbooster key bindings
-keymap("n", "<leader>cb", ":!cpb test %<CR>", opts)
-keymap("n", "<leader>ct", ":!cpb submit %<CR>", opts)
+keymap("n", "<leader>cb", "<Cmd>Test<CR>", opts)
+keymap("n", "<leader>ct", "<Cmd>Submit<CR>", opts)
 keymap("n", "<leader>cn", ":!cpb clone<CR>", opts)
 
 -- Generate the compititest testcase version from the cpbooster case
@@ -99,7 +99,7 @@ keymap("n", "<leader>gt", "<Cmd>lua require('user.functions.generate_test_cases'
 -- keymap("n", "<leader>ra", "!npx react-native run-android", opts)
 
 --Open telescope projects
-keymap("n", "<leader>tp", "<Cmd>FzfLua require('project').get_recent_project()<CR>", opts)
+keymap("n", "<leader>tp", "<Cmd>FzfLua lua require('project_nvim').get_recent_projects()<CR>", opts)
 -- keymap("n", "<leader>l", "<Cmd>latex <CR>")
 
 --Format json files
