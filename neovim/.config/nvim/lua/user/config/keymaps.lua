@@ -54,7 +54,7 @@ keymap("n", "<S-h>", "<Cmd>bprevious<CR>", opts)
 keymap("n", "<S-w>", "<Cmd>bwipeout<CR><Cmd>bnext<CR>", opts)
 
 -- Insert --
-keymap("i", "<leader>/", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

@@ -4,6 +4,8 @@ dir="~/.config/polybar/cuts/scripts/rofi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
 rofi_command="rofi -no-config -theme $dir/powermenu.rasi"
+# lockscreen_background="$HOME/dotfiles/images/.config/images/lockscreen_background.png"
+lockscreen_background="$HOME/dotfiles/images/.config/images/joker_resized.png"
 
 # Options
 shutdown=" Shutdown"
@@ -54,7 +56,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-      i3lock --image ~/.config/i3/lockscreen_background.png
+      i3lock --image $lockscreen_background
 		  # $HOME/.config/scripts/xss-lock-sleep-script.sh	
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
@@ -65,7 +67,7 @@ case $chosen in
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
 			mpc -q pause
 			amixer set Master mute
-      $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
+      bash $HOME/.config/scripts/xss-lock-sleep-script.sh $lockscreen_background && sudo /root/suspend.sh
 
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0

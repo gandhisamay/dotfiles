@@ -82,6 +82,8 @@ return packer.startup(function(use)
     end
   }
 
+  use "stevearc/stickybuf.nvim"
+  use "stevearc/aerial.nvim"
   -- Vim starter like startify
   use {
     'goolord/alpha-nvim',

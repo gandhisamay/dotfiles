@@ -7,7 +7,7 @@
 ## CONFIGURATION ##############################################################
 
 # Command to start the locker (should not fork)
-locker="i3lock --image $HOME/.config/images/lockscreen_background.png"
+# locker="i3lock --image $1"
 
 # Delay in seconds. Note that by default systemd-logind allows a maximum sleep
 # delay of 5 seconds.
@@ -33,14 +33,15 @@ trap 'kill %%' TERM INT
 
 if [[ -e /dev/fd/${XSS_SLEEP_LOCK_FD:--1} ]]; then
     # lock fd is open, make sure the locker does not inherit a copy
-    $locker {XSS_SLEEP_LOCK_FD}<&- &
-
-    sleep $sleep_delay
+    echo $1
+    i3lock --image $1 {XSS_SLEEP_LOCK_FD}<&- &
+    # sleep $sleep_delay
 
     # now close our fd (only remaining copy) to indicate we're ready to sleep
     exec {XSS_SLEEP_LOCK_FD}<&-
 else
-    $locker &
+    echo $1
+    i3lock --image $1 &
 fi
 
 wait # for locker to exit

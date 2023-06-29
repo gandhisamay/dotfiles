@@ -158,7 +158,9 @@ bindsym $mod+r mode "resize"
 # }
 
 # Running applications on no-startup 
-exec_always feh --bg-scale ~/.config/images/eiffel.jpg &
+# exec_always feh --bg-scale ~/.config/images/eiffel.jpg &
+exec_always feh --bg-scale ~/dotfiles/images/.config/images/forest_resized.png &
+# exec_always feh --bg-scale ~/Downloads/joker.jpg &
 exec --no-startup-id python3 ~/Documents/bits_wifi_logger.py &
 exec  bash ~/.config/polybar/launch.sh --cuts &
 exec --no-startup-id bash ~/.config/picom/launch.sh &
@@ -179,7 +181,7 @@ bindsym $mod+question exec i3help
 bindsym $mod+n exec alacritty -e ranger
 bindsym $mod+v exec alacritty -e nvim ~/.config/i3/config 
 bindsym $mod+a exec alacritty
-bindsym $mod+Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh && sudo /root/suspend.sh
+bindsym $mod+Tab exec $HOME/.config/scripts/xss-lock-sleep-script.sh ~/dotfiles/images/.config/images/joker_resized.png && sudo /root/suspend.sh
 
 # Key binds which involve running custom written scripts.
 mode "$custom_scripts" {
