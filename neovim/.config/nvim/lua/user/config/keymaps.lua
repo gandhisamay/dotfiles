@@ -84,7 +84,7 @@ keymap("n", "<leader>b", "<Cmd>CompetiTestRun<CR>", opts)
 keymap("n", "<leader>bn", "<Cmd>CompetiTestRunNC<CR>", opts)
 keymap("n", "<leader>e", "<Cmd>CompetiTestEdit<CR>", opts)
 keymap("n", "<leader>d", "<Cmd>CompetiTestDelete<CR>", opts)
-keymap("n", "<leader>r", "<Cmd>CompetiTestReceive testcases<CR>", opts)
+keymap("n", "<leader>r", "<Cmd>CompetiTest receive problem<CR>", opts)
 
 --cpbooster key bindings
 keymap("n", "<leader>cb", "<Cmd>Test<CR>", opts)

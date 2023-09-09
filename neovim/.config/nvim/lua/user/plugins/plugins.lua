@@ -41,6 +41,7 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   -- My plugins here
+  use "chrisbra/csv.vim"
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -82,7 +83,7 @@ return packer.startup(function(use)
     end
   }
 
-  use "stevearc/stickybuf.nvim"
+  -- use "stevearc/stickybuf.nvim"
   use "stevearc/aerial.nvim"
   -- Vim starter like startify
   use {
