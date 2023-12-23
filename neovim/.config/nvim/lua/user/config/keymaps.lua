@@ -80,7 +80,7 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Compititest key bindings setup
-keymap("n", "<leader>b", "<Cmd>CompetiTestRun<CR>", opts)
+keymap("n", "<leader>b", "<Cmd>CompetiTest run<CR>", opts)
 keymap("n", "<leader>bn", "<Cmd>CompetiTestRunNC<CR>", opts)
 keymap("n", "<leader>e", "<Cmd>CompetiTestEdit<CR>", opts)
 keymap("n", "<leader>d", "<Cmd>CompetiTestDelete<CR>", opts)
