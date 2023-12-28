@@ -1,0 +1,15 @@
+[Unit]
+Description=Service to handle all battery related issues.
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/sbin/battery.sh
+WorkingDirectory=/home/samaygandhi
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=%n

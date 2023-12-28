@@ -1,5 +1,5 @@
 #! /bin/bash
-export DISPLAY=:0
+# export DISPLAY=:0
 
 error () {
     echo "$1" >&2
@@ -49,19 +49,10 @@ main (){
   BATTERY_PERCENTAGE=$(awk -f <(get_awk_source) "${BATTERIES[@]}")
   TIME_REMAINING=$(acpi | awk '{print $5}')
 
-  if [[ "$IS_BATTERY_DISCHARGING" == "$DISCHARGING" ]]; then 
-    if [[ $BATTERY_PERCENTAGE -le 10 ]];then
-      if [[ -z $NOTIFICATION_SHOWN ]]; then
-        NOTIFICATION_SHOWN="y"
-        notify-send -u critical "Low battery ${BATTERY_PERCENTAGE}% (${TIME_REMAINING} remaining)"
-      fi
-
-      if [[ $BATTERY_PERCENTAGE -le 5 ]]; then
-        sudo /root/suspend.sh 
-      fi
+  if [[ "$IS_BATTERY_DISCHARGING" == "$DISCHARGING" ]]; then
+    if [[ $BATTERY_PERCENTAGE -le 5 ]]; then
+      sudo shutdown -h now
     fi
-  else 
-    NOTIFICATION_SHOWN="";
   fi
   # done
 }
