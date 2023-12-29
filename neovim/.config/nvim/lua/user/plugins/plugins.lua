@@ -64,19 +64,9 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use {
-    "williamboman/mason.nvim",
-    config = function()
-       require("mason").setup()
-    end
-  }
-
-  use {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-        require("mason-lspconfig").setup()
-    end
-  }
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  
 
   -- My added plugins here
   use "LunarVim/Colorschemes"
