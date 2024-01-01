@@ -167,8 +167,8 @@ exec  bash ~/.config/polybar/launch.sh --cuts &
 exec --no-startup-id bash ~/.config/picom/launch.sh &
 exec_always --no-startup-id xset dpms 0 0 600 &
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.config/scripts/xss-lock-sleep-script.sh &
-exec --no-startup-id sh -c "/bin/brave-browser -- https://hackmd.io/yKepMyvHTC6mYU-O2TeNvg"
-
+# exec --no-startup-id sh -c "/bin/brave-browser -- https://hackmd.io/yKepMyvHTC6mYU-O2TeNvg"
+#
 
 # Custom key binds
 bindsym $mod+q exec rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/cuts/scripts/rofi/launcher.rasi
@@ -205,7 +205,7 @@ mode "$custom_scripts" {
 bindsym $mod+c mode "$custom_scripts" 
 
 # This line is for disabling the titlebar for each and every windows
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 2
 
 # Added gap to the windows by using the repo 
 # https://github.com/Airblader/i3 
