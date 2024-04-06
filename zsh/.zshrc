@@ -30,7 +30,10 @@ export LS_OPTIONS='--color=auto'
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export FZF_DEFAULT_OPS="--extended"
+export JAVA_HOME="/usr/lib/jvm/jdk-21-oracle-x64/"
 export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:$HOME/development/flutter/bin"
+export PATH="${PATH}:$HOME/development/apache-maven-3.6.3/bin"
 export TESSDATA_PREFIX="$HOME/Documents/homoglyph_attack_detection/tesseract/"
 # Change the node version to 16.15.0
 source $HOME/.config/scripts/set_node_version.sh

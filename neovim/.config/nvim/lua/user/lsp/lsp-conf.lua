@@ -1,6 +1,6 @@
 local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
-	return
+  return
 end
 
 M = require("user.lsp.handlers")
@@ -25,3 +25,24 @@ lspconfig["bashls"].setup({
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 })
+
+lspconfig["dartls"].setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+})
+
+lspconfig["jdtls"].setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+})
+
+lspconfig["emmet_ls"].setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+})
+
+-- lspconfig["java_language_server"].setup({
+--   on_attach = M.on_attach,
+--   capabilities = M.capabilities,
+-- })

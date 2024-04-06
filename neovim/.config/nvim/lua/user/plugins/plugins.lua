@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "source <afile> | PackerSync",
   pattern = "plugins.lua", -- the name of your plugins file
   group = group,
-}) -- Use a protected call so we don't error out on first use
+})                         -- Use a protected call so we don't error out on first use
 
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -43,18 +43,18 @@ return packer.startup(function(use)
   -- My plugins here
   use "chrisbra/csv.vim"
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/nvim-cmp"         -- The completion plugin
+  use "hrsh7th/cmp-buffer"       -- buffer completions
+  use "hrsh7th/cmp-path"         -- path completions
+  use "hrsh7th/cmp-cmdline"      -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
@@ -71,10 +71,10 @@ return packer.startup(function(use)
   use "LunarVim/Colorschemes"
   use "lewis6991/gitsigns.nvim"
 
-  -- use {
-  --   'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  --   requires = { { 'nvim-lua/plenary.nvim' } }
-  -- }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
 
   use {
     "akinsho/toggleterm.nvim",
@@ -84,7 +84,7 @@ return packer.startup(function(use)
     end
   }
 
-  -- use "stevearc/stickybuf.nvim"
+  use "stevearc/stickybuf.nvim"
   use "stevearc/aerial.nvim"
   -- Vim starter like startify
   use {
@@ -117,8 +117,12 @@ return packer.startup(function(use)
 
   -- Dart config
   use { 'akinsho/flutter-tools.nvim',
-    requires = 'nvim-lua/plenary.nvim'
+    requires = {
+      'nvim-lua/plenary.nvim',
+      -- 'stevearc/dressing.nvim',
+    },
   }
+
   use "jose-elias-alvarez/null-ls.nvim"
   -- use 'notjedi/nvim-rooter.lua'
 
@@ -132,14 +136,14 @@ return packer.startup(function(use)
 
   use 'Pocco81/auto-save.nvim'
   use({
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  }, -- using packer.nvim
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+        require("nvim-surround").setup({
+          -- Configuration here, or leave empty to use defaults
+        })
+      end
+    }, -- using packer.nvim
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons', config = function()
       require('bufferline').setup()
     end
@@ -152,10 +156,35 @@ return packer.startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = false })
       ts_update()
     end,
   }
+
+  -- use {
+  --   'nvim-java/nvim-java',
+  --   requires = {
+  --     'nvim-java/lua-async-await',
+  --     'nvim-java/nvim-java-core',
+  --     'nvim-java/nvim-java-test',
+  --     'nvim-java/nvim-java-dap',
+  --     'MunifTanjim/nui.nvim',
+  --     'neovim/nvim-lspconfig',
+  --     'mfussenegger/nvim-dap',
+  --     {
+  --       'williamboman/mason.nvim',
+  --       opts = {
+  --         registries = {
+  --           'github:nvim-java/mason-registry',
+  --           'github:mason-org/mason-registry',
+  --         },
+  --       },
+  --     }
+  --   },
+  --   config = function()
+  --     require('java').setup({})
+  --   end
+  -- }
 
   use 'mboughaba/i3config.vim'
   use { 'ibhagwan/fzf-lua',
@@ -170,6 +199,8 @@ return packer.startup(function(use)
       require("todo-comments").setup {}
     end
   }
+
+  use 'mfussenegger/nvim-jdtls'
 
   use "vimwiki/vimwiki"
   use "ahmedkhalf/project.nvim"
